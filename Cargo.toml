@@ -2,6 +2,12 @@
 name = "atpp"
 version = "0.1.0"
 authors = ["XuPengJie <PengJieXu@secken.com>"]
+description = "atpp protocol"
+documentation = "https://github.com/gitxpj/rust-atpp"
+repository = "https://github.com/gitxpj/rust-atpp"
+keywords = ["atpp", "tcp", "protocol"]
+license = "MIT License"
+
 
 [dependencies]
 byteorder = "*"

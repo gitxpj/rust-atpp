@@ -1,6 +1,6 @@
 [package]
 name = "atpp"
-version = "0.1.0"
+version = "1.6.6"
 authors = ["XuPengJie <PengJieXu@secken.com>"]
 description = "atpp protocol"
 documentation = "https://github.com/gitxpj/rust-atpp"

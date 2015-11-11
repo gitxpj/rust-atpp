@@ -70,11 +70,18 @@ fn handle_client(stream: TcpStream, handle: &mut AtppHandle<TcpStream>) {
                 break;
             },
         };
+
+        if size <= 0 {
+            break
+        }
+
         if !last_buf.is_empty() {
             buf.write(&*last_buf);
             last_buf.clear();
         }
+
         buf.write(&raw_buf[..size]);
+
         match adapter.unpack(&mut stream, &mut buf) {
             Ok(e) => {
                 match e {

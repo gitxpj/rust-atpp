@@ -153,6 +153,7 @@ impl<'a, T> AtppAdapter<'a, T> {
         let size: usize = buf.len();
 
         let mut offset = 0;
+
         loop {
             if buf[offset..].len() >= 45 {
                 let head: String = match String::from_utf8(buf[offset..offset + 4].to_vec()) {
@@ -231,7 +232,7 @@ impl<'a, T> AtppAdapter<'a, T> {
                 }
             } else {
                 // concat package
-                last_buf.write(&*data);
+                last_buf.write(&buf[offset..]);
                 return Ok(Some(last_buf))
             }
         }

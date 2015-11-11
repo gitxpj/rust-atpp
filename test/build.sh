@@ -1,14 +1,33 @@
+arg="$1"
+type="debug"
+
+if [ -z "$arg" ]
+then
+    type="debug"
+else
+    type="release"
+fi
+
+if [ ! -d "libs" ]
+then
+    echo "mkdir libs"
+    mkdir libs
+fi
+
 cd ../
-if [ "$1"x == "debug"x ]
+
+echo $type
+
+if [ "$type" == "debug" ]
 then
     echo "debug version"
     cargo build
 else
     echo "release version"
-    cargo build --release
+    cargo build --$TYPE
 fi
 
 cd test/
-cp ../target/$1/libatpp.rlib ./lib/
-rustc   send.rs -L ./lib/
-rustc server.rs -L ./lib/
+cp ../target/$type/libatpp.rlib ./libs/
+cp ../target/$type/deps/* ./libs/
+rustc server.rs -L ./libs/

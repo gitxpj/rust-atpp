@@ -1,0 +1,7 @@
+[package]
+name = "atpp"
+version = "0.1.0"
+authors = ["XuPengJie <PengJieXu@secken.com>"]
+
+[dependencies]
+byteorder = "*"

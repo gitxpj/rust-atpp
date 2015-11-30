@@ -8,7 +8,7 @@ tcp network protocol
  ```
  If you want to use the git version:
  ```ini
- [dependencies.redis]
+ [dependencies.atpp]
  git = "https://github.com/gitxpj/rust-atpp.git"
  ```
  ## For server example
